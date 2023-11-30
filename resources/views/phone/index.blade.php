@@ -9,7 +9,7 @@
         <div class="col-md-6 col-lg-3 py-3">
 
             <div class="card h-100">
-                <img src="{{asset("storage/$phone[id].jpg")}}" class="card-img-top" alt="{{$phone['model']}}">
+                <img src="{{asset("$phone[id].jpg")}}" class="card-img-top" alt="{{$phone['model']}}">
 
                 <div class="card-body">
                     <h5 class="card-title">{{$phone['manufacturer']}} {{$phone['model']}}</h5>
@@ -18,7 +18,7 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-md-8 d-grid">
-                            <a href="{{route("phones.show", ["id"=> $phone['id']])}}" class="btn btn-primary">{{$phone['manufacturer']}}, {{$phone['model']}}</a>
+                            <a href="{{route("phone.show", ["id"=> $phone['id']])}}" class="btn btn-primary">{{$phone['manufacturer']}}, {{$phone['model']}}</a>
                         </div>
                         <div class="col-md-4">
                             <span>{{number_format($phone["price"], 0, ",", " ")}} Ft</span>

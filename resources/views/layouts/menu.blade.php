@@ -23,15 +23,15 @@ $phones = [
                     @if(request()->routeIs('home'))
                     <a class="nav-link active" aria-current="page" href="{{$url}}">Főoldal</a>
                     @else
-                    <a class="nac-link" href="{{$url}}">Főoldal</a>
+                    <a class="nav-link" href="{{$url}}">Főoldal</a>
                     @endif
                 </li>
                 @foreach($phones as $id => $name)
                 <li class="nav-item">
                     @php
-                    $url = route('phones.show', ['id' => $id]);
+                    $url = route('phone.show', ['id' => $id]);
                     @endphp
-                    @if(request()->routeIs('phones.show') && request()->route("id") == $id)
+                    @if(request()->routeIs('phone.show') && request()->route("id") == $id)
                     <a class="nav-link active" aria-current="page" href="{{$url}}">{{$name}}</a>
                     @else
                     <a class="nav-link" href="{{$url}}">{{$name}}</a>
